@@ -25,7 +25,6 @@ a:hover {
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
 }
-
 /*--------------------------------------------------------------
 # Back to top button
 --------------------------------------------------------------*/
@@ -405,6 +404,7 @@ section {
   text-transform: uppercase;
   display: block;
   font-weight: 600;
+  font-size: 15px;
   font-family: "Poppins", sans-serif;
   color: #050d18;
 }
@@ -418,6 +418,7 @@ section {
 .skills .progress .skill .subskill {
   font-weight: 10;
   font-style: normal;
+  float: right;
 }
 
 .skills .progress-bar-wrap {
