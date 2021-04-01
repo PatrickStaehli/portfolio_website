@@ -408,12 +408,18 @@ section {
   font-family: "Poppins", sans-serif;
   color: #050d18;
 }
+@media screen and (max-width: 768px){
+	.skills .progress .skill {
+	  font-size: 10px;
+	}
+}
+
+
 
 .skills .progress .skill .val {
   float: right;
   font-style: normal;
 }
-
 
 .skills .progress .skill .subskill {
   font-weight: 10;
