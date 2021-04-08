@@ -14,8 +14,7 @@ def home():
 @app.route("/files", methods=['GET'])
 def get_thesis():
     '''
-    Returns the bookings that are defined in the defined .csv file as json.
-    The filename is passed via the argument 'filename'
+    Returns the file that is passed via the argument 'filename'
     '''
     print('Requesting file')
     if 'filename' in request.args:
