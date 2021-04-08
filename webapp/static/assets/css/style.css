@@ -599,6 +599,61 @@ section {
   bottom: 0;
 }
 
+
+
+/*--------------------------------------------------------------
+# Publications
+--------------------------------------------------------------*/
+.publications .publication {
+  height: 50px;
+  display: block;
+  background: none;
+}
+
+.publications .publication-type {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  color: #050d18;
+}
+
+.publications .publication .title {
+  padding: 10px 0;
+  margin: 0 0 6px 0;
+  display: block;
+  #font-weight: 600;
+  font-size: 15px;
+  font-family: "Poppins", sans-serif;
+  color: #050d18;
+  #float: right;
+}
+.publications .publication .title .rwd-break{
+	display: none;
+}
+
+.publications .publication .title .journal {
+  font-weight: 10;
+  font-style: normal;
+  float: right;
+}
+
+@media screen and (max-width: 768px){
+	.publications .publication .title {
+	  font-size: 10px;
+	}
+	.publications .publication .title .rwd-break{
+		display: block;
+	}
+	.publications .publication .title .journal {
+		font-weight: 10;
+		font-style: normal;
+		float: left;
+	}
+}
+
+
+
 /*--------------------------------------------------------------
 # Services
 --------------------------------------------------------------*/

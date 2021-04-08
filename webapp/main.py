@@ -1,5 +1,6 @@
-from flask import Flask, redirect, url_for, render_template, request, jsonify
+from flask import Flask, redirect, url_for, render_template, request, jsonify, send_from_directory
 import numpy as np
+import os
 
 app = Flask(__name__)
 app.config["TEMPLATES_AUTO_RELOAD"] = True
@@ -9,6 +10,20 @@ app.config['JSON_SORT_KEYS'] = False
 @app.route("/")
 def home():
         return render_template("index.html")
+
+@app.route("/files", methods=['GET'])
+def get_thesis():
+    '''
+    Returns the bookings that are defined in the defined .csv file as json.
+    The filename is passed via the argument 'filename'
+    '''
+    print('Requesting file')
+    if 'filename' in request.args:
+        workingdir = os.path.abspath(os.getcwd())
+        filepath = workingdir + '/static/files/'
+        return send_from_directory(filepath, request.args['filename'])
+    else:
+        return 'File not found'
 
 @app.after_request
 def add_header(response):
