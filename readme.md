@@ -5,7 +5,7 @@ publish projects with working examples directly on your website.
 
 ## Prerequisites
 
-This project is hosted on Linode and runs on nginx webserver. Renting a linode server is not free, but you can get one for only 5$/month.
+This project is hosted on Linode and runs on an nginx webserver. Renting a linode server is not free, but you can get one for only 5$/month.
 
 ## How to use it
 
@@ -54,5 +54,5 @@ Run Gunicorn via the supervisor by restarting the supervisor
 
 ## License
 
-Find out available licensing options for the BootstrapMade tempalte [here](https://bootstrapmade.com/license/)
+Find out available licensing options for the BootstrapMade template [here](https://bootstrapmade.com/license/)
 
