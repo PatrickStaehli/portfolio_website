@@ -1,88 +1,50 @@
-# Project Title
+# Portfolio Website hosted on Linode
 
-One Paragraph of project description goes here
+This is a personal portfolio website that is hosted on [linode](www.linode.com) using flask. Hosting a website on a linux server has the big advantage that you are able to publish portfolio projects with working examples (i.e. python projects) directly on your website. 
 
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
-### Prerequisites
+## Prerequisites
 
-What things you need to install the software and how to install them
+This project is hosted on Linode and runs on nginx webserver. Renting a linode server is not free, but you can get one for only 5$/month. However, there exist alternative products.
 
-```
-Give examples
-```
+In addition, I also recommend to buy a personal domain, such as e.g myawesomeportfolio.com.
 
-### Installing
+## How to use it
 
-A step by step series of examples that tell you how to get a development env running
+### Setting up the Linode
 
-Say what the step will be
+After registration on linode, you can create a new linode and choose a Distribution, Linode Plan (for this purpose, the cheapest one is perfectly fine).
+When the server is ready, several steps are needed to securing your server, as described [here](https://www.linode.com/docs/guides/securing-your-server/)
 
-```
-Give the example
-```
+### Deploy on a Linux Server using Nginx and Gunicorn
 
-And repeat
+- Clone the repository on your server
+- Install the requirements from the requirements.txt
 
-```
-until finished
-```
+### Install Nginx and Gunicorn
 
-End with an example of getting some data out of the system or using it for a little demo
+> Install Nginx and Gunicorn
 
-## Running the tests
+'''
+sudo apt install nginx
+pip install gunicorn 
+'''
 
-Explain how to run the automated tests for this system
+- Remove the default Nginx config file
+'''
+sudo rm /etc/nginx/sites-enabled/default
+'''
+- Update the Nginx configuration file /config/nginx.conf 
 
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
-
+ 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* [BOOTSTRAPMADE](https://bootstrapmade.com/) - Bootstrap Template
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+Find out available licensing options for the BootstrapMade tempalte [here](https://bootstrapmade.com/license/)
 
