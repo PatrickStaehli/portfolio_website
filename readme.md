@@ -1,64 +1,56 @@
 # Portfolio Website hosted on Linode
 
-This is a personal portfolio website that is hosted on [linode](www.linode.com) using flask. Hosting a website on a linux server has the big advantage that you are able to publish portfolio projects with working examples (i.e. python projects) directly on your website. 
-
-## Getting Started
-
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+This is my personal [portfolio website](https://www.patrickstaehli.ch) that is hosted on [linode](www.linode.com) using flask. Hosting a website on a linux server gives you great flexibiltiy, as e.g to 
+publish projects with working examples directly on your website. 
 
 ## Prerequisites
 
-This project is hosted on Linode and runs on nginx webserver. Renting a linode server is not free, but you can get one for only 5$/month. However, there exist alternative products.
-
-In addition, I also recommend to buy a personal domain, such as e.g myawesomeportfolio.com.
+This project is hosted on Linode and runs on nginx webserver. Renting a linode server is not free, but you can get one for only 5$/month.
 
 ## How to use it
 
 ### Setting up the Linode
 
-After registration on linode, you can create a new linode and choose a Distribution, Linode Plan (for this purpose, the cheapest one is perfectly fine).
-When the server is ready, several steps are needed to securing your server, as described [here](https://www.linode.com/docs/guides/securing-your-server/)
-
-### Deploy on a Linux Server using Nginx and Gunicorn
+After registration on linode, you can create a new linode, choose a distribution and Linode plan (for this purpose, the cheapest one is perfectly fine).
+When the server is ready, several steps are needed securing your server, as described [here](https://www.linode.com/docs/guides/securing-your-server/).
+After setting up the server:
 
 - Clone the repository on your server
 - Install the requirements from the requirements.txt
 
-### Install Nginx and Gunicorn
+### Setting up Nginx
+Nginx is the webserver that handles all the static files located in /webapp/static.
+#### Install Nginx
 
-> Install Nginx and Gunicorn
+	sudo apt install nginx 
 
-'''bash
-sudo apt install nginx
+#### Remove the default Nginx config file
+	sudo rm /etc/nginx/sites-enabled/default
 
-pip install gunicorn 
-'''
+#### Update the Nginx configuration 
+Update the Nginx configuration file /config/nginx.conf and copy it to /etc/nginx/sites-enabled/default and restart Nginx.
 
-- Remove the default Nginx config file
-'''bash
-sudo rm /etc/nginx/sites-enabled/default
-'''
+	sudo systemctl restart nginx
 
-- Update the Nginx configuration file /config/nginx.conf 
+### Setting up Gunicorn
+Gunicorn is a Python Web Server Gateway Interface (WSGI) HTTP server that handles the python code, i.e. the flask application.
+Gunicorn is launched via a supervisor so that the flask app autorestarts when it crashes or when the server is restarted.
 
-> Run gunicorn with supervisor
+#### Install Gunicorn and supervisor
+	
+	pip install gunicorn
+	sudo apt install supervisor
+	
+#### Update the supervisor config 
+Update the supervisor configuration file /config/supervisor.conf and copy it to /etc/supervisor/conf.d/
 
-'''
-sudo apt install nginx
-pip install gunicorn 
-'''
+Run Gunicorn via the supervisor by restarting the supervisor
 
-- Remove the default Nginx config file
-'''
-sudo rm /etc/nginx/sites-enabled/default
-'''
-- Update the Nginx configuration file /config/nginx.conf 
-
- 
->>>>>>> adf70de3fc2a9453f4d4effe4a601b829f24a868
+	sudo supervisorctl restart
+	
 ## Built With
 
-* [BOOTSTRAPMADE](https://bootstrapmade.com/) - Bootstrap Template
+[BOOTSTRAPMADE](https://bootstrapmade.com/) - Bootstrap Template
 
 ## License
 
