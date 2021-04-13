@@ -42,6 +42,20 @@ sudo rm /etc/nginx/sites-enabled/default
 - Update the Nginx configuration file /config/nginx.conf 
 
 > Run gunicorn with supervisor
+
+'''
+sudo apt install nginx
+pip install gunicorn 
+'''
+
+- Remove the default Nginx config file
+'''
+sudo rm /etc/nginx/sites-enabled/default
+'''
+- Update the Nginx configuration file /config/nginx.conf 
+
+ 
+>>>>>>> adf70de3fc2a9453f4d4effe4a601b829f24a868
 ## Built With
 
 * [BOOTSTRAPMADE](https://bootstrapmade.com/) - Bootstrap Template
