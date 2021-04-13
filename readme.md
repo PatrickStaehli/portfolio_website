@@ -41,7 +41,7 @@ sudo rm /etc/nginx/sites-enabled/default
 
 - Update the Nginx configuration file /config/nginx.conf 
 
- 
+> Run gunicorn with supervisor
 ## Built With
 
 * [BOOTSTRAPMADE](https://bootstrapmade.com/) - Bootstrap Template
