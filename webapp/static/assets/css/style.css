@@ -622,11 +622,9 @@ section {
   padding: 10px 0;
   margin: 0 0 6px 0;
   display: block;
-  #font-weight: 600;
   font-size: 15px;
   font-family: "Poppins", sans-serif;
   color: #050d18;
-  #float: right;
 }
 .publications .publication .title .rwd-break{
 	display: none;
@@ -636,6 +634,10 @@ section {
   font-weight: 10;
   font-style: normal;
   float: right;
+}
+
+.publication-rwd-break{
+    display: none;
 }
 
 @media screen and (max-width: 768px){
@@ -650,8 +652,31 @@ section {
 		font-style: normal;
 		float: left;
 	}
+    .publication-rwd-break{
+        display: block;
+    }
 }
 
+/* Publication abstracts */
+.publication-abstract .card-body{
+	font-size: 14px;
+	font-family: "Poppins", sans-serif;
+	color: #050d18;
+	background-color: #FFFFFF;
+}
+.publication-abstract .card-body .abstract-title{
+	font-weight: 500;
+}
+
+@media screen and (max-width: 768px){
+    .publication-abstract .card-body{
+        font-size: 10px;
+    }
+    .publication-abstract .card-body .abstract-title{
+        font-size: 10px;    
+    }
+    
+}
 
 
 /*--------------------------------------------------------------
